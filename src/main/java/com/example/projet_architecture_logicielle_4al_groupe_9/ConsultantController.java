@@ -8,6 +8,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -20,8 +21,7 @@ public class ConsultantController {
             path = "/consultants",
             produces = "application/json"
     )
-    public List<Consultant> getConsultants(){
-        System.out.println(consultantDAO.getConsultants());
+    public Map<String, Consultant> getConsultants(){
         return consultantDAO.getConsultants();
     }
 
@@ -35,7 +35,6 @@ public class ConsultantController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    //améliorer update
     @PutMapping(
             path = "/consultants/{id}",
             consumes = "application/json",

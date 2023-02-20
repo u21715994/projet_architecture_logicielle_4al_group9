@@ -6,7 +6,7 @@ import java.util.List;
 public class FindConsultantDatabaseService {
     public static List<Consultant> findConsultantByName(String name){
         List<Consultant> consultantFound = new ArrayList<>();
-        for(Consultant consultant: ConsultantList.consultantList){
+        for(Consultant consultant: ConsultantList.consultantList.values()){
             if(consultant.firstName.equals(name) || consultant.lastName.equals(name)) {
                 consultantFound.add(consultant);
             }

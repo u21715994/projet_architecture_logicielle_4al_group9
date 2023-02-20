@@ -3,11 +3,12 @@ package com.example.projet_architecture_logicielle_4al_groupe_9;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Repository
 public class ConsultantDAO {
-    public static List<Consultant> getConsultants() {
+    public static Map<String, Consultant> getConsultants() {
         return ConsultantList.consultantList;
     }
 
