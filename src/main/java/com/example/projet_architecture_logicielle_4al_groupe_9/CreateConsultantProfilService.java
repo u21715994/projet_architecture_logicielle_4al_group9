@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CreateConsultantProfilService {
-    public static Consultant createConsultantProfil(String firstName, String lastName, Float averageDailyRate, List<String> skills, List<Disponibility> disponibilities){
-        return new Consultant(firstName, lastName, averageDailyRate, skills, disponibilities);
+    public static Consultant createConsultantProfil(String firstName, String lastName, Float averageDailyRate, List<String> skills,
+                                                    List<Disponibility> disponibilities, PayementMode payementMode){
+        return new Consultant(firstName, lastName, averageDailyRate, skills, disponibilities, payementMode);
     }
 }

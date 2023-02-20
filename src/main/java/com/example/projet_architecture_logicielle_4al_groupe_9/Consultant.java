@@ -17,14 +17,18 @@ public class Consultant {
     List<String> skills;
     @JsonProperty
     List<Disponibility> disponibilities;
+    @JsonProperty
+    PayementMode payementMode;
 
-    public Consultant(String firstName, String lastName, Float averageDailyRate,List<String> skills, List<Disponibility> disponibilities){
+    public Consultant(String firstName, String lastName, Float averageDailyRate,List<String> skills,
+                      List<Disponibility> disponibilities, PayementMode payementMode){
         this.id = UUID.randomUUID().toString();
         this.firstName = firstName;
         this.lastName = lastName;
         this.averageDailyRate = averageDailyRate;
         this.skills = skills;
         this.disponibilities = disponibilities;
+        this.payementMode = payementMode;
     }
 
     public Consultant(Consultant consultant){
@@ -33,6 +37,7 @@ public class Consultant {
         this.averageDailyRate = averageDailyRate;
         this.skills = consultant.skills;
         this.disponibilities = consultant.disponibilities;
+        this.payementMode = payementMode;
     }
 
     public String getID() {
