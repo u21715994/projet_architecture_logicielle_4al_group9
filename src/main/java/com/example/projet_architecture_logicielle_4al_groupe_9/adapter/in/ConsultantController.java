@@ -1,5 +1,7 @@
-package com.example.projet_architecture_logicielle_4al_groupe_9;
+package com.example.projet_architecture_logicielle_4al_groupe_9.adapter.in;
 
+import com.example.projet_architecture_logicielle_4al_groupe_9.domain.ConsultantDAO;
+import com.example.projet_architecture_logicielle_4al_groupe_9.domain.Consultant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,8 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -16,15 +16,6 @@ import java.util.UUID;
 public class ConsultantController {
     @Autowired
     private ConsultantDAO consultantDAO;
-
-    @GetMapping(
-            path = "/consultants",
-            produces = "application/json"
-    )
-    public Map<String, Consultant> getConsultants(){
-        return consultantDAO.getConsultants();
-    }
-
     @PostMapping(
             path = "/consultants",
             consumes = "application/json",
@@ -50,13 +41,5 @@ public class ConsultantController {
                 .toUri();
 
         return ResponseEntity.created(location).build();
-    }
-
-    @GetMapping(
-            path = "/consultants/{name}",
-            produces = "application/json"
-    )
-    public List<Consultant> findConsultantByName(@PathVariable String name){
-        return consultantDAO.findConsultantByName(name);
     }
 }

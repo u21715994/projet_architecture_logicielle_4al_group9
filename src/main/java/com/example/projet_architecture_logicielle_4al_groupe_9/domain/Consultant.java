@@ -1,23 +1,15 @@
-package com.example.projet_architecture_logicielle_4al_groupe_9;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
+package com.example.projet_architecture_logicielle_4al_groupe_9.domain;
 
 import java.util.List;
 import java.util.UUID;
 
-public class Consultant {
-    String id;
-    @JsonProperty
-    String firstName;
-    @JsonProperty
-    String lastName;
-    @JsonProperty
-    Float averageDailyRate;
-    @JsonProperty
-    List<String> skills;
-    @JsonProperty
-    List<Disponibility> disponibilities;
-    @JsonProperty
+public final class Consultant {
+    private String id;
+    private String firstName;
+    private String lastName;
+    private Float averageDailyRate;
+    private List<String> skills;
+    private List<Disponibility> disponibilities;
     PayementMode payementMode;
 
     public Consultant(String firstName, String lastName, Float averageDailyRate,List<String> skills,
@@ -38,6 +30,14 @@ public class Consultant {
         this.skills = consultant.skills;
         this.disponibilities = consultant.disponibilities;
         this.payementMode = payementMode;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public String getID() {

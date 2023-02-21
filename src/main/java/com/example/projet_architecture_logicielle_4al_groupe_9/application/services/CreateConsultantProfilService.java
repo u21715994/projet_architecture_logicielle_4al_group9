@@ -1,6 +1,9 @@
-package com.example.projet_architecture_logicielle_4al_groupe_9;
+package com.example.projet_architecture_logicielle_4al_groupe_9.application.services;
 
-import java.util.ArrayList;
+import com.example.projet_architecture_logicielle_4al_groupe_9.domain.Consultant;
+import com.example.projet_architecture_logicielle_4al_groupe_9.domain.Disponibility;
+import com.example.projet_architecture_logicielle_4al_groupe_9.domain.PayementMode;
+
 import java.util.List;
 
 public class CreateConsultantProfilService {
