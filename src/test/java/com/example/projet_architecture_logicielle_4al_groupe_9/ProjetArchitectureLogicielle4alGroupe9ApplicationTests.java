@@ -15,6 +15,7 @@ class ProjetArchitectureLogicielle4alGroupe9ApplicationTests {
 	@Test
 	/**
 	 * Test de connexion à notre BDD
+	 * BDD sur une machine appartenant à Bastien LEUWERS
 	 */
 	void testConnexionSQL() {
 		SQL sql = new SQL();
