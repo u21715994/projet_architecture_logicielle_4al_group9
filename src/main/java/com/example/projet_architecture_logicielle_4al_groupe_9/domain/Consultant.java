@@ -10,17 +10,17 @@ public final class Consultant {
     private Float averageDailyRate;
     private List<String> skills;
     private List<Disponibility> disponibilities;
-    PayementMode payementMode;
+    private PayementMode paymentMode; // Typo fix
 
-    public Consultant(String firstName, String lastName, Float averageDailyRate,List<String> skills,
-                      List<Disponibility> disponibilities, PayementMode payementMode){
+    public Consultant(String firstName, String lastName, Float averageDailyRate, List<String> skills,
+                      List<Disponibility> disponibilities, PayementMode paymentMode){
         this.id = UUID.randomUUID().toString();
         this.firstName = firstName;
         this.lastName = lastName;
         this.averageDailyRate = averageDailyRate;
         this.skills = skills;
         this.disponibilities = disponibilities;
-        this.payementMode = payementMode;
+        this.paymentMode = paymentMode; // Typo fix
     }
 
     public Consultant(Consultant consultant){
@@ -29,7 +29,7 @@ public final class Consultant {
         this.averageDailyRate = averageDailyRate;
         this.skills = consultant.skills;
         this.disponibilities = consultant.disponibilities;
-        this.payementMode = payementMode;
+        this.paymentMode = paymentMode; // Typo fix
     }
 
     public String getFirstName() {
@@ -40,13 +40,63 @@ public final class Consultant {
         return lastName;
     }
 
-    public String getID() {
+    public String getID() { // Convention de nommage pour l'ID
         return id;
+    }
+
+    public void setID(String id) {
+        this.id = id;
+    }
+
+    public List<String> getSkills() { // Ajout d'un getter pour les compétences
+        return skills;
+    }
+
+    public List<Disponibility> getDisponibilities() { // Ajout d'un getter pour les disponibilités
+        return disponibilities;
+    }
+
+    public Float getAverageDailyRate() { // Ajout d'un getter pour le taux journalier moyen
+        return averageDailyRate;
+    }
+
+    public PayementMode getPaymentMode() { // Ajout d'un getter pour le mode de paiement
+        return paymentMode;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAverageDailyRate(Float averageDailyRate) {
+        this.averageDailyRate = averageDailyRate;
+    }
+
+    public void setSkills(List<String> skills) {
+        this.skills = skills;
+    }
+
+    public void setDisponibilities(List<Disponibility> disponibilities) {
+        this.disponibilities = disponibilities;
+    }
+
+    public void setPaymentMode(PayementMode paymentMode) {
+        this.paymentMode = paymentMode;
     }
 
     @Override
     public String toString() {
         return "Consultant{" +
+                "ID='" + id + '\'' +
+                "ID='" + id + '\'' +
                 "ID='" + id + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
