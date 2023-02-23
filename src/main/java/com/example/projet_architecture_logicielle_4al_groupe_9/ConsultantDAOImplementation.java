@@ -16,7 +16,7 @@ public class ConsultantDAOImplementation implements ConsultantDAO {
     }
 
     @Override
-    public void updateConsultant(UUID id, Consultant consultant){
+    public void updateConsultant(String id, Consultant consultant){
         UpdateConsultantDatabaseService.updateConsultant(id, consultant);
     }
 }

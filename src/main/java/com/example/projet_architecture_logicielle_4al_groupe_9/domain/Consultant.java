@@ -26,10 +26,10 @@ public final class Consultant {
     public Consultant(Consultant consultant){
         this.firstName = consultant.firstName;
         this.lastName = consultant.lastName;
-        this.averageDailyRate = averageDailyRate;
+        this.averageDailyRate = consultant.averageDailyRate;
         this.skills = consultant.skills;
         this.disponibilities = consultant.disponibilities;
-        this.paymentMode = paymentMode; // Typo fix
+        this.paymentMode = consultant.paymentMode; // Typo fix
     }
 
     public String getFirstName() {
@@ -64,10 +64,6 @@ public final class Consultant {
         return paymentMode;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -95,13 +91,13 @@ public final class Consultant {
     @Override
     public String toString() {
         return "Consultant{" +
-                "ID='" + id + '\'' +
-                "ID='" + id + '\'' +
-                "ID='" + id + '\'' +
+                "id='" + id + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", skills='" + skills + '\'' +
+                ", averageDailyRate=" + averageDailyRate +
+                ", skills=" + skills +
                 ", disponibilities=" + disponibilities +
+                ", paymentMode=" + paymentMode +
                 '}';
     }
 }

@@ -63,7 +63,7 @@ public class SQL {
         }
     }
 
-    public void updateConsultant(Consultant consultant) {
+    public void updateConsultant(String id, Consultant consultant) {
         String sql = "UPDATE consultant SET nom = ?, prenom = ?, tjm = ?, competence = ?, disponibilite = ?, mode_paiement = ? WHERE id = ?";
         try {
             PreparedStatement statement = conn.prepareStatement(sql);
@@ -75,7 +75,7 @@ public class SQL {
             String disponibilitiesStr = String.join(",", disponibilities.stream().map(Enum::toString).collect(Collectors.toList()));
             statement.setString(5, disponibilitiesStr);
             statement.setString(6, consultant.getPaymentMode().toString());
-            statement.setString(7, consultant.getID());
+            statement.setString(7, id);
             statement.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Erreur lors de la mise à jour du consultant dans la base de données : " + e.getMessage());

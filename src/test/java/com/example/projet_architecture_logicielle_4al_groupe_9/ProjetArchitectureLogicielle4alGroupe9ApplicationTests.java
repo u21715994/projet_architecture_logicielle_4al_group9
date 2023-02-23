@@ -93,7 +93,7 @@ class ProjetArchitectureLogicielle4alGroupe9ApplicationTests {
 		consultant.setSkills(Arrays.asList("Java", "Python", "JavaScript"));
 		consultant.setDisponibilities(Arrays.asList(Disponibility.SATURDAY));
 		consultant.setPaymentMode(PayementMode.PAYEMENT_THREE_TIME);
-		consultantDAO.updateConsultant(consultant);
+		consultantDAO.updateConsultant(consultant.getID(), consultant);
 
 		// Checking if the update has been done
 		Consultant consultantFromDB = consultantDAO.getConsultant(id);

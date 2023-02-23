@@ -31,7 +31,7 @@ public class ConsultantController {
             consumes = "application/json",
             produces = "application/json"
     )
-    public ResponseEntity<Object> putConsultant(@PathVariable UUID id, @RequestBody Consultant consultant){
+    public ResponseEntity<Object> putConsultant(@PathVariable String id, @RequestBody Consultant consultant){
         consultantDAO.updateConsultant(id, consultant);
 
         URI location = ServletUriComponentsBuilder

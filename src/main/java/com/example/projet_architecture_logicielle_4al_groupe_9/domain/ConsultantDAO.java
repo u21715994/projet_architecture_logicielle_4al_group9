@@ -9,5 +9,5 @@ import java.util.UUID;
 public interface ConsultantDAO {
     public void addConsultant(Consultant consultant);
 
-    public void updateConsultant(UUID id, Consultant consultant);
+    public void updateConsultant(String id, Consultant consultant);
 }
