@@ -19,7 +19,7 @@ public class ClientController {
             path = "/consultants",
             produces = "application/json"
     )
-    public Map<String, Consultant> getConsultants(){
+    public List<Consultant> getConsultants(){
         return clientDAO.getConsultants();
     }
 

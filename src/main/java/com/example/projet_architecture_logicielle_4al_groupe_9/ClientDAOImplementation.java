@@ -4,6 +4,7 @@ import com.example.projet_architecture_logicielle_4al_groupe_9.application.servi
 import com.example.projet_architecture_logicielle_4al_groupe_9.domain.ClientDAO;
 import com.example.projet_architecture_logicielle_4al_groupe_9.domain.Consultant;
 import com.example.projet_architecture_logicielle_4al_groupe_9.domain.PlateformConsultant;
+import com.example.projet_architecture_logicielle_4al_groupe_9.modele.SQL;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,8 +13,8 @@ import java.util.Map;
 @Repository
 public class ClientDAOImplementation implements ClientDAO {
     @Override
-    public Map<String, Consultant> getConsultants() {
-        return PlateformConsultant.consultantList;
+    public List<Consultant> getConsultants() {
+        return new SQL().getConsultantList();
     }
 
     @Override

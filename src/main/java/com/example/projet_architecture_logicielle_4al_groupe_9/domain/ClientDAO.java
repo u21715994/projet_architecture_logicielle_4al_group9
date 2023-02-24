@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface ClientDAO {
-    public Map<String, Consultant> getConsultants();
+    public List<Consultant> getConsultants();
 
     public List<Consultant> findConsultantByName(String name);
 }

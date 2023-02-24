@@ -93,6 +93,38 @@ public class SQL {
         }
     }
 
+    public List<Consultant> getConsultantList() {
+        String sql = "SELECT * FROM consultant";
+        Consultant consultant = null;
+        List<Consultant> consultants = new ArrayList<>();
+        try {
+            PreparedStatement statement = conn.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                String firstName = resultSet.getString("prenom");
+                String lastName = resultSet.getString("nom");
+                Float averageDailyRate = resultSet.getFloat("tjm");
+                String[] skills = resultSet.getString("competence").split(",");
+                List<String> skillsList = new ArrayList<>();
+                for (String skill : skills) {
+                    skillsList.add(skill);
+                }
+                String disponibilitiesStr = resultSet.getString("disponibilite");
+                String[] disponibilitiesArr = disponibilitiesStr.split(",");
+                List<Disponibility> disponibilities = new ArrayList<>();
+                for (String disponibilityStr : disponibilitiesArr) {
+                    disponibilities.add(Disponibility.valueOf(disponibilityStr));
+                }
+                PayementMode payementMode = PayementMode.valueOf(resultSet.getString("mode_paiement"));
+                consultant = new Consultant(firstName, lastName, averageDailyRate, skillsList, disponibilities, payementMode);
+                consultants.add(consultant);
+            }
+        } catch (SQLException e) {
+            System.err.println("Erreur lors de la récupération du consultant dans la base de données : " + e.getMessage());
+        }
+        return consultants;
+    }
+
     public Consultant getConsultant(String id) {
         String sql = "SELECT * FROM consultant WHERE id = ?";
         Consultant consultant = null;
