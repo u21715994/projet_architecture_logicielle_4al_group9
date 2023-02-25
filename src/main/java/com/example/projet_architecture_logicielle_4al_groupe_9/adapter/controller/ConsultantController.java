@@ -1,6 +1,6 @@
-package com.example.projet_architecture_logicielle_4al_groupe_9.adapter.in;
+package com.example.projet_architecture_logicielle_4al_groupe_9.adapter.controller;
 
-import com.example.projet_architecture_logicielle_4al_groupe_9.domain.ConsultantDAO;
+import com.example.projet_architecture_logicielle_4al_groupe_9.port.ConsultantDAO;
 import com.example.projet_architecture_logicielle_4al_groupe_9.domain.Consultant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.UUID;
 
 @RestController
 

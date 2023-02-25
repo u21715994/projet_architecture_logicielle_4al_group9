@@ -3,7 +3,7 @@ package com.example.projet_architecture_logicielle_4al_groupe_9;
 import com.example.projet_architecture_logicielle_4al_groupe_9.domain.Client;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.example.projet_architecture_logicielle_4al_groupe_9.modele.SQL;
+import com.example.projet_architecture_logicielle_4al_groupe_9.infrastructure.SQL;
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -12,11 +12,8 @@ import com.example.projet_architecture_logicielle_4al_groupe_9.domain.Disponibil
 import com.example.projet_architecture_logicielle_4al_groupe_9.domain.PayementMode;
 import org.junit.jupiter.api.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class ProjetArchitectureLogicielle4alGroupe9ApplicationTests {
 
